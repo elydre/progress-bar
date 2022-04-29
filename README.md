@@ -28,3 +28,16 @@ for step in range(10)
 | p    | percents    |
 | s    | step        |
 | c    | clean       |
+
+## exemples
+
+```sh
+# mode p
+[********** 75% ***      ]
+
+# mode s
+[********** 3/4 ***      ]
+
+# mode c
+[******************      ]
+```
