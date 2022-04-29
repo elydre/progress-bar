@@ -1,4 +1,4 @@
-from bar import Bar
+from progress_bar import Bar
 
 def progress_loop():
     for i in range(8000):
