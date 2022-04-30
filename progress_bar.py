@@ -17,14 +17,15 @@
 
 import os
 
-version = "0.0.5"
+version = "0.0.5b"
 
 class Bar:
     def __init__(self, step, char="=", display_mode="p", longueur = 0):
         """
-        nb: number of steps
+        step: number of steps
         char: char to display
         display_mode: "p" percents, "s" steps, "c" clean
+        longueur: length of the bar (0 = auto)
         """
         
         self.longueur = longueur or os.get_terminal_size().columns - 3

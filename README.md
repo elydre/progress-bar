@@ -9,10 +9,10 @@ Progress-bar est un module python qui permet de créer des barres de progression
 ```python
 from progress_bar import Bar
 
-progress = Bar(steps, char, mode)
+objet = Bar(steps, char, mode)
 
 # exemple
-bar = Bar(10, '*', 'p')
+objet = Bar(10, '*', 'p')
 ```
 
 ## mise en fonctionnement
