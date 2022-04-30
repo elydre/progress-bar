@@ -4,7 +4,7 @@ from time import sleep
 def progress_loop():
     for i in range(42):
         test.progress(i+1)
-        sleep(0.1)
+        sleep(0.2)
 
 
 # percentage mode

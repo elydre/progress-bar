@@ -16,9 +16,8 @@
 '''
 
 import os
-from ColorPrint import colorprint
 
-version = "0.0.4"
+version = "0.0.5"
 
 class Bar:
     def __init__(self, step, char="=", display_mode="p", longueur = 0):
@@ -59,9 +58,10 @@ class Bar:
                 to_display = ""
 
             elif i < self.steps[step]:
-                colorprint(self.char, self.gradient[round(len(self.gradient) * (i / self.longueur))], "k")
+                r, g, b = self.gradient[round(len(self.gradient) * (i / self.longueur))]
+                print(end = f"\033[38;2;{r};{g};{b}m{self.char}\033[38;2;255;255;255m\033[00m", flush = True)
 
             else:
-                print(" ", end="")
+                print(end=" ")
 
         print("]")
