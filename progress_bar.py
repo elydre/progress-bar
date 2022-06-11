@@ -14,7 +14,7 @@ ___________________________________
 
 import os
 
-version = "0.0.5b"
+version = "0.0.6"
 
 class Bar:
     def __init__(self, step, char="=", display_mode="p", longueur = 0):
@@ -48,18 +48,18 @@ class Bar:
         display_zone = list(range(round(self.longueur / 2 - len(to_display) / 2), round(self.longueur / 2 + len(to_display) / 2)))
 
         self.go_up()
-        print(end="[")
+        buffer = "["
 
         for i in range(self.longueur):
             if i in display_zone:
-                print(end = to_display)
+                buffer += to_display
                 to_display = ""
 
             elif i < self.steps[step]:
                 r, g, b = self.gradient[round(len(self.gradient) * (i / self.longueur))]
-                print(end = f"\033[38;2;{r};{g};{b}m{self.char}\033[38;2;255;255;255m\033[00m", flush = True)
+                buffer += f"\033[38;2;{r};{g};{b}m{self.char}\033[38;2;255;255;255m\033[00m"
 
             else:
-                print(end=" ")
+                buffer += " "
 
-        print("]")
+        print(f"{buffer}]")
